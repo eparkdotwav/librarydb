@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add author</title>
+</head>
+<body>
+    <h1>add author</h1>
+    <form method="POST" action="{{ url_for('author_form') }}">
+        {{ form.hidden_tag() }}
+        
+        {{ form.first.label }}
+        {{ form.first() }}
+        
+        <br> <br>
+        
+        {{ form.last.label }}
+        {{ form.last() }}
+        
+        <br> <br>
+        
+        {{ form.middle.label }}
+        {{ form.middle() }}
+        
+        <br> <br>
+        
+        {{ form.submit() }}
+       
+        <br> <br> <br>
+    </form>
+</body>
+</html>

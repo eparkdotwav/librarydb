@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>library</title>
+</head>
+<body>
+    <h1>library</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>author</th>
+                <th>year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book, author in books_and_authors %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ author.first }} {{ "" if author.middle is none else author.middle }} {{ author.last }}</td>
+                    <td>{{ "" if book.year is none else book.year }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <a href = "{{ url_for('author_form') }}">add author</a>
+    <br><br>
+    <a href = "{{ url_for('book_form') }}">add book</a>
+</body>
+</html>
